@@ -45,7 +45,7 @@ function Header() {
                 <ul>
                   <li>Profiles</li>
                   <li>Setting</li>
-                  <li className=''>Sign out</li>
+                  <li className='red'>Sign out</li>
                 </ul>
               </div>
             </div>
@@ -53,6 +53,8 @@ function Header() {
         </div>
           <section className={`small-nav ${status}`}>
           <nav>
+            <br />
+            <br />
                   <div className="item">TV shows</div>
                   <div className="item">Movies</div>
                   <div className="item">Latest</div>

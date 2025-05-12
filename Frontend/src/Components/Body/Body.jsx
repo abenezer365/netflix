@@ -1,10 +1,12 @@
+import Banner from './Banner/banner.jsx'
 import './Body.css'
 
 function Body() {
   return (
-    <main>
-        Body
-    </main>
+    <>
+       <Banner />
+    </>
+
   )
 }
 

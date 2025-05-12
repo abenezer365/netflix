@@ -7,6 +7,7 @@ header{
     align-items: center;
     padding: 20px 40px;
     z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 header .left img{
     height: 32px;
@@ -23,12 +24,15 @@ header .left nav{
     gap: 20px;
 }
 header .left nav div{
+    font-weight: 300;
+    opacity: 0.8;
     padding: 5px 8px;
-    transition: transform 0.3s ease;
+    transition: ease-in 0.3s;
 }
 header .left nav div:hover{
-   transform: scale(1.1);
+    font-weight: 400;
    cursor: pointer;
+   opacity: 1;
    box-sizing: border-box;
 }
 
@@ -49,7 +53,7 @@ header .dropdown{
     top: 100%;
     right: 0;
     width: max-content;
-    background-color: rgb(37, 37, 37);
+    background-color: rgb(19, 19, 19);
     padding: 5px 0;
     border-radius: 7px;
 }
@@ -73,8 +77,13 @@ header .user-container:hover .dropdown{
 .small-nav{
     display: none;
 }
-
-
+.red{
+    color: red;
+}
+.scroll{
+     background-color: rgba(36, 36, 36, 0.8); /* or any darker color */
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 /* Tablet and small screen Style */
 @media (max-width:900px){
     header .left nav {
@@ -102,6 +111,7 @@ header .user-container:hover .dropdown{
         width: 50vw;
         height: 100vh;
         background-color: rgb(26, 26, 26);
+        
         padding: 10px 2px;
     }
 
@@ -125,3 +135,14 @@ header .user-container:hover .dropdown{
         display: block;
     }
 }
+
+@media (max-width:500px){
+    header{
+        padding: 20px 20px;
+    }
+    header .left img{
+    height: 25px;
+    padding: auto 10px;
+}
+}
+
