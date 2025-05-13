@@ -2,12 +2,19 @@ import { useEffect, useState } from "react"
 import axios  from '../../../utils/api'
 import request from '../../../utils/request'
 import skip_icon from '../../../assets/skip.svg'
+import Youtube from 'react-youtube'
+import movieTrailer from 'movie-trailer'
+
+
+
 
 import './Banner.css'
 
 function Banner() {
     const [movie, setMovie] = useState(null)
     const [skip, setSkip] = useState(true)
+    const [videoId, setVideoId] = useState(null)
+    const [showVideo, setShowVideo] = useState(false)
     function skipper(){
         setSkip(prev => !prev)
     }
@@ -24,6 +31,23 @@ function Banner() {
     },[skip])
     const truncate = (text, max, ellipsis = '...') => text.length <= max ? text : `${text.slice(0, max)}${ellipsis}`;
     if (!movie) return <div>Loading...</div>;
+
+      const handleVideo = async (movieTitle) => {
+        try {
+          const url = await movieTrailer(movieTitle)
+          const videoId = new URL(url).searchParams.get('v')
+          setVideoId(videoId)
+          setShowVideo(true)
+        } catch (err) {
+          console.error(`Trailer error: ${err.message}`)
+        }
+      }
+    
+      const closeVideo = () => {
+        setVideoId(null)
+        setShowVideo(false)
+      }
+    
   return (
     <>
         <div className="banner" >
@@ -37,12 +61,27 @@ function Banner() {
             <div className="info">
                  <h1 className="title">{movie.title || movie.name}</h1>
                  <div className="btn-container">
-                    <button>Play</button> 
+                   <button onClick={() => handleVideo(movie.title || movie.original_title || movie.name || movie.original_name)}>Play</button>
                     <button>Add to my list</button>
                  </div>
                  <div className="desc">
                     <p>{truncate(movie.overview,150)}</p>
                  </div>
+                  {showVideo && (
+                    <div className="video-cont" onClick={closeVideo}>
+                    <div className="video" onClick={(e) => e.stopPropagation()}>
+                        <Youtube
+                        videoId={videoId}
+                        opts={{
+                            height: '450',
+                            width: '800',
+                            playerVars: { autoplay: 1 },
+                        }}
+                        />
+                        <button onClick={closeVideo}>Close</button>
+                    </div>
+                    </div>
+                )}
             </div>
         </div>
     </>

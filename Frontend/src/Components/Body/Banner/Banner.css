@@ -92,9 +92,6 @@
 .banner .skip{
 width: 40px;
 }
-.banner .skip:hover{
-     
-}
 @media (max-width:600px){
     .banner .background img {
         width: 100%;
@@ -102,9 +99,6 @@ width: 40px;
         object-fit: cover;
          mask-image: linear-gradient(180deg, rgb(0, 0, 0) 30%, transparent 100%);
         opacity: 0.5;
-    }
-    .banner .desc{
-        
     }
     .banner .info{
         justify-content: flex-end;
@@ -116,4 +110,73 @@ width: 40px;
     .banner .info .desc p{
        text-align: center;
     }
+}
+/* Banner.css */
+
+/* Fullscreen overlay container */
+.video-cont {
+  position: fixed; /* Not relative */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Inner modal box */
+.video {
+  position: relative;
+  background: #111;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* YouTube iframe responsive */
+.video iframe {
+  width: 100%;
+  height: 45vw;
+  max-height: 450px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Close button */
+.video button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.video button:hover {
+  background-color: darkred;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .video iframe {
+    height: 55vw;
+  }
+
+  .video button {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
 }
