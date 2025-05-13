@@ -39,6 +39,8 @@ function Footer() {
             </ul>
 
       </div>
+      <br />
+      <div className="copyright">©Copyright <a href="https://abenezerzewge.com/">Abenezer Zewge 2025</a></div>
     </footer>
   )
 }

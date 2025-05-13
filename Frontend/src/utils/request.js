@@ -1,8 +1,8 @@
 const APIKEY = import.meta.env.VITE_API_KEY
 
 const reqeust = {
-    trending: `/trending/all/week?api_key=${APIKEY}&language=en-US`,
 	originals: `/discover/tv?api_key=${APIKEY}&with_networks=213`,
+    trending: `/trending/all/week?api_key=${APIKEY}&language=en-US`,
 	rated: `/movie/top_rated?api_key=${APIKEY}&language=en-US`,
 	action: `/discover/movie?api_key=${APIKEY}&with_genres=28`,
 	comedy: `/discover/movie?api_key=${APIKEY}&with_genres=35`,
