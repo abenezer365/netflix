@@ -62,7 +62,7 @@ function Banner() {
             <div className="info">
                  <h1 className="title">{movie.title || movie.name}</h1>
                  <div className="btn-container">
-                   <button onClick={() => handleVideo(movie.title || movie.original_title || movie.name || movie.original_name)}>Play</button>
+                   <button onClick={() => handleVideo(movie?.title || movie?.name)}>Play</button>
                     <button>Add to my list</button>
                  </div>
                  <div className="desc">
