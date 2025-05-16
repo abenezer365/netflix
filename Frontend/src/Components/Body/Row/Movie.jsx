@@ -2,6 +2,7 @@ import axios from '../../../utils/api'
 import { useEffect, useState } from 'react'
 import Youtube from 'react-youtube'
 import movieTrailer from 'movie-trailer'
+import React from 'react';
 
 function Movie({ title, fetchUrl }) {
   const [movies, setMovies] = useState([])

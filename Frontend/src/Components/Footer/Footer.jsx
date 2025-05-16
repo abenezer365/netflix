@@ -2,6 +2,7 @@ import './Footer.css'
 import youtube_logo from '../../assets/youtube.svg'
 import instagram_logo from '../../assets/instagram.svg'
 import facebook_logo from '../../assets/facebook.svg'
+import React from 'react';
 
 function Footer() {
   return (

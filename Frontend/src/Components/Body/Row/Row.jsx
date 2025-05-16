@@ -1,6 +1,7 @@
 import './Row.css'
 import request from '../../../utils/request'
 import Movie from './Movie'
+import React from 'react';
 
 function Row() {
   return (

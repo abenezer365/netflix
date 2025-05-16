@@ -5,6 +5,7 @@ import user from '../../assets/user.svg'
 import arrow from '../../assets/arrow.svg'
 import menu from '../../assets/menu.svg'
 import './Header.css'
+import React from 'react';
 
 import { useState } from 'react'
 
