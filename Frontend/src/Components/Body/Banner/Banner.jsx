@@ -5,7 +5,7 @@ import skip_icon from '../../../assets/skip.svg'
 import Youtube from 'react-youtube'
 import movieTrailer from 'movie-trailer'
 import './Banner.css'
-
+import React from 'react'
 function Banner() {
     const [movie, setMovie] = useState(null)
     const [skip, setSkip] = useState(true)
