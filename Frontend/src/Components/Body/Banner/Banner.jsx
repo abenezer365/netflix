@@ -4,11 +4,6 @@ import request from '../../../utils/request'
 import skip_icon from '../../../assets/skip.svg'
 import Youtube from 'react-youtube'
 import movieTrailer from 'movie-trailer'
-
-import React from 'react';
-
-
-
 import './Banner.css'
 
 function Banner() {
