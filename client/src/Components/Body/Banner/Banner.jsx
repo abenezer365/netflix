@@ -55,13 +55,13 @@ function Banner() {
                 <img className="skip" onClick={skipper} src={skip_icon} alt="Skip icon" />
             </div>
             <div className="info">
-                 <h1 className="title">{movie.title || movie.name}</h1>
+                 <h1 className="title">{movie?.title || movie?.name}</h1>
                  <div className="btn-container">
                    <button onClick={() => handleVideo(movie?.title || movie?.name)}>Play</button>
                     <button>Add to my list</button>
                  </div>
                  <div className="desc">
-                    <p>{truncate(movie.overview,150)}</p>
+                    <p>{truncate(movie?.overview,150)}</p>
                  </div>
                   {showVideo && (
                     <div className="video-cont" onClick={closeVideo}>
